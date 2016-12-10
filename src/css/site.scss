@@ -1,0 +1,42 @@
+body {
+    background: url('../img/bg.jpg') no-repeat top;
+    background-size: cover;
+    font-family: 'Alegreya';
+    font-size: 62.5%;
+}
+h1,h2,h3,h4,h5,h6 {
+    font-family: "Aref Ruqaa";
+}
+.navbar {
+    border-radius: 0;
+    margin-bottom: 0;
+    color: blue;
+    li {
+        a {
+            font-size: 1.6rem
+        }
+    }
+    #nav-logo {
+        padding: 0;
+        margin-left: 1.5rem;
+        img { 
+            max-height: 5rem;
+        }
+    }
+}
+
+#home {
+    .jumbotron {
+        background: url('../img/gw.jpg') no-repeat center;
+        background-size: cover;
+        box-shadow: 0px 0px 6.7rem .2rem rgba(0,0,0,0.75);
+        text-shadow: .2rem .2rem .3rem rgba(67, 48, 48, 1);
+        color: #fff;
+    }
+    .main-classes {
+        text-align: center;
+        img {
+            max-height: 15rem;
+        }
+    }
+}
