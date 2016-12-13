@@ -23,30 +23,26 @@ export default class Home extends React.Component {
     }
 
 
-charData = [
-    {
-        value: 48775,
-        color: "#848484",
-        highlight: "#c9c9c9",
-        label: "Council"
-    },
-    {
-        value: 65610,
-        color: "#5f8c77",
-        highlight: "#a4d6bf",
-        label: "Invaders"
-    },
-    {
-        value: 85600,
-        color:"#b56767",
-        highlight: "#ffb5b5",
-        label: "Divines"
-    },
-];
-
-
-
-
+    charData = [
+        {
+            value: 48775,
+            color: "#848484",
+            highlight: "#c9c9c9",
+            label: "Council"
+        },
+        {
+            value: 65610,
+            color: "#5f8c77",
+            highlight: "#a4d6bf",
+            label: "Invaders"
+        },
+        {
+            value: 85600,
+            color:"#b56767",
+            highlight: "#ffb5b5",
+            label: "Divines"
+        },
+    ];
 
     render() {
         return (
@@ -66,7 +62,7 @@ charData = [
                             <li>+25% Attack</li>
                             <li>+25% Defense</li>
                         </ul>
-                        <p><button class="btn btn-danger" data-toggle="modal" data-target="#signUp">Join the Divines!</button></p>
+                        <p><Button class="btn btn-danger" onClick={this.showModal.bind(this)}>Join the Divines!</Button></p>
                     </div>
                     <div class="col-md-4">
                         <img src="../../img/shield2.png" />
@@ -77,7 +73,7 @@ charData = [
                             <li>+20% Defense</li>
                             <li>+10% Army</li>
                         </ul>
-                        <p><button class="btn btn-success" data-toggle="modal" data-target="#signUp">Join the Invaders!</button></p>
+                        <p><Button class="btn btn-success" onClick={this.showModal.bind(this)}>Join the Invaders!</Button></p>
 
                     </div>
                     <div class="col-md-4">
@@ -88,7 +84,7 @@ charData = [
                             <li>+40% Army</li>
                             <li>+10% Defense</li>
                         </ul>
-                        <p><button class="btn btn-primary" data-toggle="modal" data-target="#signUp">Join the Council!</button></p>
+                        <p><Button class="btn btn-primary" onClick={this.showModal.bind(this)}>Join the Council!</Button></p>
                     </div>
                 </div>
  
@@ -97,7 +93,6 @@ charData = [
                     <PolarArea charData={this.charData}></PolarArea>
                 </div>
 
-                <Button bsStyle="primary" bsSize="large" onClick={this.showModal.bind(this)}> Launch demo modal </Button>
                 <Signup modalShow={this.state.modalShow} hideModal={this.hideModal.bind(this)}/>
             </div>
         )
