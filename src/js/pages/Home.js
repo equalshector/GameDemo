@@ -1,68 +1,49 @@
 import React from "react"
 import { IndexLink, Link } from "react-router"
 
+import { Modal, Button } from "react-bootstrap"
+import Signup from "../components/modal/Signup"
+
 import PolarArea from "../components/graphs/ChartPolarArea"
 
+
+
 export default class Home extends React.Component {
-charData = [
-    {
-        value: 300,
-        color:"#ff0000",
-        highlight: "#00ff00",
-        label: "Red"
-    },
-    {
-        value: 50,
-        color: "#46BFBD",
-        highlight: "#5AD3D1",
-        label: "Green"
+    constructor() {
+        super()
+        this.state = {modalShow: false}
     }
 
+    hideModal() {
+        this.setState({ modalShow: false })
+    }
+
+    showModal() {
+        this.setState({ modalShow: true })
+    }
+
+
+charData = [
+    {
+        value: 48775,
+        color: "#848484",
+        highlight: "#c9c9c9",
+        label: "Council"
+    },
+    {
+        value: 65610,
+        color: "#5f8c77",
+        highlight: "#a4d6bf",
+        label: "Invaders"
+    },
+    {
+        value: 85600,
+        color:"#b56767",
+        highlight: "#ffb5b5",
+        label: "Divines"
+    },
 ];
 
-
-
-chartOptions = {
-    //Boolean - Show a backdrop to the scale label
-    scaleShowLabelBackdrop : false,
-
-    //String - The colour of the label backdrop
-    scaleBackdropColor : "rgba(255,255,255,1)",
-
-    // Boolean - Whether the scale should begin at zero
-    scaleBeginAtZero : true,
-
-    //Number - The backdrop padding above & below the label in pixels
-    scaleBackdropPaddingY : 2,
-
-    //Number - The backdrop padding to the side of the label in pixels
-    scaleBackdropPaddingX : 2,
-
-    //Boolean - Show line for each value in the scale
-    scaleShowLine : true,
-
-    //Boolean - Stroke a line around each segment in the chart
-    segmentShowStroke : true,
-
-    //String - The colour of the stroke on each segment.
-    segmentStrokeColor : "#fff",
-
-    //Number - The width of the stroke value in pixels
-    segmentStrokeWidth : 2,
-
-    //Number - Amount of animation steps
-    animationSteps : 100,
-
-    //String - Animation easing effect.
-    animationEasing : "easeOutBounce",
-
-    //Boolean - Whether to animate the rotation of the chart
-    animateRotate : true,
-
-    //Boolean - Whether to animate scaling the chart from the centre
-    animateScale : false,
-
-}
 
 
 
@@ -74,31 +55,51 @@ chartOptions = {
                     <div class="container text-center">
                         <h1>The Monster Game</h1> 
                         <p>Turn Based Strategy Game<br/>Show your Friends who are they dealing with!</p>
-                        <p><a class="btn btn-default btn-lg">Play Now</a></p>
                     </div>
                 </div>
                 <div class="main-classes container">
                     <div class="col-md-4">
                         <img src="../../img/shield1.png" />
                         <h3>The Divines</h3>
-                        <article></article>
+                        <div>Tip the Balance of POWER to your will!</div>
+                        <ul>
+                            <li>+25% Attack</li>
+                            <li>+25% Defense</li>
+                        </ul>
+                        <p><button class="btn btn-danger" data-toggle="modal" data-target="#signUp">Join the Divines!</button></p>
                     </div>
                     <div class="col-md-4">
                         <img src="../../img/shield2.png" />
                         <h3>The Invaders</h3>
-                        <article></article>
+                        <div>Use Advanced Tach to Conquer ALL!</div>
+                        <ul>
+                            <li>+20% Attack</li>
+                            <li>+20% Defense</li>
+                            <li>+10% Army</li>
+                        </ul>
+                        <p><button class="btn btn-success" data-toggle="modal" data-target="#signUp">Join the Invaders!</button></p>
+
                     </div>
                     <div class="col-md-4">
                         <img src="../../img/shield3.png" />
                         <h3>The Council</h3>
-                        <article></article>
+                        <div>Raise the Dead and Defend yourself!</div>
+                        <ul>
+                            <li>+40% Army</li>
+                            <li>+10% Defense</li>
+                        </ul>
+                        <p><button class="btn btn-primary" data-toggle="modal" data-target="#signUp">Join the Council!</button></p>
                     </div>
                 </div>
  
-                <div>
-                    <PolarArea charData={this.charData} chartOptions={this.chartOptions}></PolarArea>
+                <div id="maingraph" class="text-center">
+                    <h3>The Armies</h3>
+                    <PolarArea charData={this.charData}></PolarArea>
                 </div>
+
+                <Button bsStyle="primary" bsSize="large" onClick={this.showModal.bind(this)}> Launch demo modal </Button>
+                <Signup modalShow={this.state.modalShow} hideModal={this.hideModal.bind(this)}/>
             </div>
         )
-    }
+    } 
 }
