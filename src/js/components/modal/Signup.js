@@ -7,26 +7,52 @@ export default class Signup extends React.Component {
         return (
             <Modal show={this.props.modalShow} onHide={this.props.hideModal} dialogClassName="custom-modal">
                 <Modal.Header closeButton>
-                    <Modal.Title>Modal heading</Modal.Title>
+                    <Modal.Title>Begin the Fight!</Modal.Title>
+                    <h5>Choose wisely you wont be able to change.</h5>
                 </Modal.Header>
                 <Modal.Body>
-                    <h4>Text in a modal</h4>
-                    <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
-                    <hr />
-                    <h4>Overflowing text to show scroll behavior</h4>
-                    <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-                    <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
-                    <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-                    <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
-                    <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-                    <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+                        <form class="form-horizontal">
+                        <fieldset>
+                            <div class="form-group">
+                                <label for="inputUsername" class="col-lg-2 control-label">Username</label>
+                                <div class="col-lg-10">
+                                    <input type="text" class="form-control" id="inputUsername" placeholder="Username" autocomplete="off" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+                                <div class="col-lg-10">
+                                    <input type="text" class="form-control" id="inputEmail" placeholder="Email" autocomplete="off" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputPassword" class="col-lg-2 control-label">Password</label>
+                                <div class="col-lg-10">
+                                    <input type="password" class="form-control" id="inputPassword" placeholder="Password" autocomplete="off" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="select" class="col-lg-2 control-label">Army</label>
+                                <div class="col-lg-10">
+                                    <select class="form-control" id="select">
+                                        <option>Divine</option>
+                                        <option>Invador</option>
+                                        <option>Council</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                            <div class="col-lg-10 pull-right text-right">
+                                <Button onClick={this.props.hideModal}>Cancel</Button>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                            </div>
+                        </fieldset>
+                        </form>
                 </Modal.Body>
-                <Modal.Footer>
-                    <Button onClick={this.props.hideModal}>Close</Button>
-                </Modal.Footer>
             </Modal>
         );
     }
