@@ -2,7 +2,7 @@ import React from "react"
 import { IndexLink, Link } from "react-router"
 
 import { Modal, Button } from "react-bootstrap"
-import Signup from "../components/modal/Signup"
+import Signup from "../components/bootstrap/modalSignup"
 
 import PolarArea from "../components/graphs/ChartPolarArea"
 
@@ -21,7 +21,6 @@ export default class Home extends React.Component {
     showModal() {
         this.setState({ modalShow: true })
     }
-
 
     charData = [
         {
@@ -96,5 +95,5 @@ export default class Home extends React.Component {
                 <Signup modalShow={this.state.modalShow} hideModal={this.hideModal.bind(this)}/>
             </div>
         )
-    } 
+    }
 }
