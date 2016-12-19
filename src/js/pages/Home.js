@@ -54,7 +54,7 @@ export default class Home extends React.Component {
                 </div>
                 <div class="main-classes container">
                     <div class="col-md-4">
-                        <img src="../../img/shield1.png" />
+                        <img src="img/shield1.png" />
                         <h3>The Divines</h3>
                         <div>Tip the Balance of POWER to your will!</div>
                         <ul>
@@ -64,7 +64,7 @@ export default class Home extends React.Component {
                         <p><Button class="btn btn-danger" onClick={this.showModal.bind(this)}>Join the Divines!</Button></p>
                     </div>
                     <div class="col-md-4">
-                        <img src="../../img/shield2.png" />
+                        <img src="img/shield2.png" />
                         <h3>The Invaders</h3>
                         <div>Use Advanced Tach to Conquer ALL!</div>
                         <ul>
@@ -76,7 +76,7 @@ export default class Home extends React.Component {
 
                     </div>
                     <div class="col-md-4">
-                        <img src="../../img/shield3.png" />
+                        <img src="img/shield3.png" />
                         <h3>The Council</h3>
                         <div>Raise the Dead and Defend yourself!</div>
                         <ul>

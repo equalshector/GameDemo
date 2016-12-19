@@ -10,7 +10,7 @@ export default class Header extends React.Component {
             <Navbar inverse collapseOnSelect>
                 <Navbar.Header>
                     <Navbar.Brand>
-                        <a href="/" id="nav-logo"><img src="../../../img/logo.png" /></a>
+                        <a href="/" id="nav-logo"><img src="img/logo.png" /></a>
                     </Navbar.Brand>
                     <Navbar.Toggle />
                 </Navbar.Header>
